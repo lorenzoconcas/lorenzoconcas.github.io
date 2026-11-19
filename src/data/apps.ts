@@ -154,4 +154,6 @@ export const apps: AppInfo[] = [
 ]
 
 export const bySlug = (slug: string) => apps.find((a) => a.slug === slug)!
-export const privacyPath = (a: AppInfo) => `/${a.slug}#${a.privacy.length > 1 ? 'privacy-it' : 'privacy'}`
+/** Link alla privacy policy; se l'informativa esiste nella lingua del sito, apre quella. */
+export const privacyPath = (a: AppInfo, lang = 'it') =>
+  `/${a.slug}#${a.privacy.length > 1 ? `privacy-${a.privacy.some((p) => p.lang === lang) ? lang : 'it'}` : 'privacy'}`

@@ -7,5 +7,20 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
   plugins: [vue(), tailwindcss()],
-  ssgOptions: { script: 'async', formatting: 'minify', dirStyle: 'nested' },
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    dirStyle: 'nested',
+    // Una pagina per lingua: l'italiano alla radice, le altre sotto /<lang>.
+    includedRoutes() {
+      const pages = ['/', '/minitv', '/minitv/playlists', '/racemap', '/curalink', '/spese-immobili']
+      const langs = ['en', 'fr', 'de', 'es', 'pt']
+      return [
+        ...pages,
+        '/minitv/crea-playlist',
+        '/404',
+        ...langs.flatMap((lang) => pages.map((page) => (page === '/' ? `/${lang}` : `/${lang}${page}`))),
+      ]
+    },
+  },
 })

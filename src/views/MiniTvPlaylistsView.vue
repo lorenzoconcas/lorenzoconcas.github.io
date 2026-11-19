@@ -1,22 +1,17 @@
 <script setup lang="ts">
-import { useHead } from "@unhead/vue";
+import { useLocalizedHead } from "../i18n/head";
+import { useI18n } from "../i18n";
 import { bySlug } from "../data/apps";
 
 const app = bySlug("minitv");
 const base = import.meta.env.BASE_URL;
 const dir = `${base}minitv/playlists/`;
-const title = "MiniTV – Playlist di esempio";
-const lead =
-  "Qui sono disponibili delle playlist di esempio con canali italiani";
-
-useHead({
-  title,
-  meta: [
-    { name: "description", content: lead },
-    { property: "og:title", content: title },
-    { property: "og:description", content: lead },
-  ],
-});
+const { t, to } = useI18n();
+const groupName = (name: string) => (name.startsWith("playlists.") ? t(name as never) : name);
+useLocalizedHead(() => ({
+  title: t("playlists.title"),
+  description: t("playlists.lead"),
+}));
 
 const groups = [
   { name: "Rai", file: "rai.json", logo: "rai.png" },
@@ -28,8 +23,8 @@ const groups = [
     file: "discovery.json",
     logo: "warnerbrosdiscovery.png",
   },
-  { name: "Altro", file: "altro.json", logo: "altro.png" },
-  { name: "Regionali", file: "regionali.json", logo: "altro.png" },
+  { name: "playlists.other", file: "altro.json", logo: "altro.png" },
+  { name: "playlists.regional", file: "regionali.json", logo: "altro.png" },
 ];
 
 const abs = (file: string) =>
@@ -52,15 +47,13 @@ async function save(file: string) {
     URL.revokeObjectURL(url);
   } catch (e) {
     console.error(e);
-    alert(
-      "Impossibile scaricare il file in questo momento. Riprova più tardi.",
-    );
+    alert(t("playlists.errDownload"));
   }
 }
 async function copy(file: string) {
   try {
     await navigator.clipboard.writeText(abs(file));
-    alert("Link copiato negli appunti.");
+    alert(t("playlists.copied"));
   } catch {
     alert(abs(file));
   }
@@ -79,11 +72,12 @@ const btn =
 
 <template>
   <div :style="{ '--accent': app.color }" class="mx-auto max-w-4xl px-4 pb-8 pt-28 sm:px-6 sm:pt-32">
+    <RouterLink :to="to('/minitv')" class="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold !text-muted no-underline transition-colors hover:!text-accent">← MiniTV</RouterLink>
 
     <header class="mb-7 flex flex-col items-start gap-3.5">
       <img
         :src="app.icon"
-        alt="Icona MiniTV"
+        :alt="t('card.icon', { name: 'MiniTV' })"
         width="128"
         height="128"
         class="size-32 rounded-[30px] object-cover ring-1 ring-line"
@@ -92,13 +86,13 @@ const btn =
       <h1
         class="m-0 text-[clamp(28px,5vw,44px)] font-bold leading-[1.12] tracking-[-0.03em]"
       >
-        MiniTV – Playlist di esempio
+        {{ t('playlists.title') }}
       </h1>
       <p class="m-0 max-w-[62ch] text-[clamp(16px,2.6vw,19px)] text-muted">
-        {{ lead }}
+        {{ t('playlists.lead') }}
       </p>
       <RouterLink to="/minitv/crea-playlist" :class="btn + ' no-underline'"
-        >Crea la tua playlist</RouterLink
+        >{{ t('playlists.create') }}</RouterLink
       >
     </header>
 
@@ -109,14 +103,14 @@ const btn =
         class="flex flex-wrap items-center justify-between gap-3 rounded-3xl border border-line bg-surface p-5"
       >
         <div class="flex items-center gap-3">
-          <img :src="`${dir}${g.logo}`" :alt="g.name" class="w-16" />
-          <span class="text-lg font-semibold">{{ g.name }}</span>
+          <img :src="`${dir}${g.logo}`" :alt="groupName(g.name)" class="w-16" />
+          <span class="text-lg font-semibold">{{ groupName(g.name) }}</span>
         </div>
         <div class="flex flex-wrap items-center gap-3">
           <button
             type="button"
             :class="btn"
-            :aria-label="`Apri ${g.file}`"
+            :aria-label="t('playlists.ariaOpen', { file: g.file })"
             @click="view(g.file)"
           >
             <svg
@@ -129,12 +123,12 @@ const btn =
                 d="M12 5C5 5 2 12 2 12s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
               />
             </svg>
-            Vedi
+            {{ t('playlists.view') }}
           </button>
           <button
             type="button"
             :class="btn"
-            :aria-label="`Scarica ${g.file}`"
+            :aria-label="t('playlists.ariaSave', { file: g.file })"
             @click="save(g.file)"
           >
             <svg
@@ -145,12 +139,12 @@ const btn =
             >
               <path d="M5 20h14v-2H5v2zm7-18-5 5h3v6h4V7h3l-5-5z" />
             </svg>
-            Salva
+            {{ t('playlists.save') }}
           </button>
           <button
             type="button"
             :class="btn"
-            :aria-label="`Copia link ${g.file}`"
+            :aria-label="t('playlists.ariaCopy', { file: g.file })"
             @click="copy(g.file)"
           >
             <svg
@@ -163,16 +157,16 @@ const btn =
                 d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"
               />
             </svg>
-            Copia link
+            {{ t('playlists.copy') }}
           </button>
           <button
             type="button"
             :class="btn"
-            :aria-label="`Apri ${g.file} in MiniTV`"
+            :aria-label="t('playlists.ariaOpenIn', { file: g.file })"
             @click="openInMiniTV(g.file)"
           >
             <img :src="`${dir}minitv.svg`" alt="" class="size-5" />
-            Apri in MiniTV
+            {{ t('playlists.openIn') }}
           </button>
         </div>
       </section>

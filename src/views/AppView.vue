@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useHead } from '@unhead/vue'
+import { useLocalizedHead } from '../i18n/head'
+import { useI18n } from '../i18n'
 import { ArrowLeft } from 'lucide-vue-next'
 import SupportSection from '../components/SupportSection.vue'
 import StoreBadges from '../components/StoreBadges.vue'
@@ -9,22 +10,20 @@ import MiniTvExtras from '../components/MiniTvExtras.vue'
 import { bySlug } from '../data/apps'
 
 const props = defineProps<{ slug: string }>()
-const app = computed(() => bySlug(props.slug))
+const base = computed(() => bySlug(props.slug))
+const { t, to, lang: siteLang, app: appI18n } = useI18n()
+// Testi nella lingua del sito; se manca la traduzione resta l'italiano di riferimento.
+const app = computed(() => ({ ...base.value, ...(appI18n(props.slug as never) ?? {}) }))
 const route = useRoute()
 const router = useRouter()
 
-useHead(() => ({
-  title: `${app.value.title}`,
-  meta: [
-    { name: 'description', content: app.value.lead },
-    { property: 'og:title', content: app.value.title },
-    { property: 'og:description', content: app.value.lead },
-    { name: 'theme-color', content: '#0b1020' },
-  ],
-}))
+useLocalizedHead(() => ({ title: app.value.title, description: app.value.lead, type: 'website' }))
 
 const multi = computed(() => app.value.privacy.length > 1)
-const lang = ref(app.value.privacy[0].lang)
+// Tab dell'informativa: parte dalla lingua del sito se disponibile.
+const lang = ref(
+  (app.value.privacy.find((p) => p.lang === siteLang.value) ?? app.value.privacy[0]).lang,
+)
 const privacyRef = ref<HTMLElement | null>(null)
 
 function syncFromHash() {
@@ -46,21 +45,21 @@ const card = 'rounded-3xl border border-line bg-surface p-6'
 
 <template>
   <div :style="{ '--accent': app.color }" class="mx-auto max-w-4xl px-4 pb-8 pt-28 sm:px-6 sm:pt-32">
-  <RouterLink to="/" class="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold !text-muted no-underline transition-colors hover:!text-accent"><ArrowLeft class="size-4" />Tutte le app</RouterLink>
+  <RouterLink :to="to('/')" class="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold !text-muted no-underline transition-colors hover:!text-accent"><ArrowLeft class="size-4" />{{ t('app.back') }}</RouterLink>
 
   <header class="mb-7 flex flex-col items-start gap-3.5">
-    <img :src="app.icon" :alt="`Icona ${app.name}`" width="128" height="128"
+    <img :src="app.icon" :alt="t('card.icon', { name: app.name })" width="128" height="128"
       class="size-32 rounded-[30px] object-cover ring-1 ring-line" :style="{ boxShadow: `0 18px 50px ${app.color}73` }" />
     <h1 class="m-0 font-display text-[clamp(28px,5vw,44px)] font-extrabold leading-[1.12] tracking-tight">{{ app.title }}</h1>
     <p class="m-0 max-w-[62ch] text-[clamp(16px,2.6vw,19px)] text-muted">{{ app.lead }}</p>
-    <p v-if="app.version" class="m-0 text-[15px] text-muted">Versione {{ app.version }}</p>
+    <p v-if="app.version" class="m-0 text-[15px] text-muted">{{ t('app.version', { v: app.version }) }}</p>
   </header>
 
   <div class="flex flex-col gap-5">
     <section v-if="slug === 'minitv'" :class="card" :style="{ background: `color-mix(in srgb, ${app.color} 12%, var(--surface))` }">
-      <h2 class="m-0 font-display text-2xl font-bold tracking-tight">Versione tvOS</h2>
-      <p class="mb-0 mt-1.5 text-muted">La versione dedicata per Apple TV è in fase di sviluppo!</p>
-      <p class="mb-0 mt-3 text-[15px] text-muted">Gli acquisti in-app saranno comuni e condivisi fra tutte le versioni</p>
+      <h2 class="m-0 font-display text-2xl font-bold tracking-tight">{{ t('app.tvosTitle') }}</h2>
+      <p class="mb-0 mt-1.5 text-muted">{{ t('app.tvosText') }}</p>
+      <p class="mb-0 mt-3 text-[15px] text-muted">{{ t('app.tvosNote') }}</p>
     </section>
 
     <section :class="card">
@@ -76,12 +75,13 @@ const card = 'rounded-3xl border border-line bg-surface p-6'
     </section>
 
     <section v-if="!multi" id="privacy" ref="privacyRef" :class="card" >
-      <h2 class="mt-0 font-display text-2xl font-bold tracking-tight">Privacy Policy</h2>
-      <div class="policy" v-html="app.privacy[0].html" />
+      <h2 class="mt-0 font-display text-2xl font-bold tracking-tight">{{ t('app.privacyHeading') }}</h2>
+      <p v-if="siteLang !== 'it'" class="mb-3 mt-0 text-[15px] text-muted">{{ t('app.privacyOnlyIt') }}</p>
+      <div class="policy" lang="it" v-html="app.privacy[0].html" />
     </section>
 
     <section v-else id="privacy" ref="privacyRef" :class="card">
-      <div class="mb-2 flex flex-wrap gap-2" role="tablist" aria-label="Lingua">
+      <div class="mb-2 flex flex-wrap gap-2" role="tablist" :aria-label="t('app.privacyLang')">
         <button v-for="p in app.privacy" :key="p.lang" type="button" role="tab" :aria-selected="lang === p.lang"
           class="cursor-pointer rounded-full border px-3.5 py-1 text-[15px] font-medium transition"
           :class="lang === p.lang ? 'border-transparent text-white' : 'border-line bg-surface-2 text-muted hover:text-fg'"
