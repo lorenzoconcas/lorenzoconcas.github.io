@@ -16,7 +16,6 @@ useHead({
     { property: "og:title", content: title },
     { property: "og:description", content: lead },
   ],
-  link: [{ rel: "icon", href: app.icon }],
 });
 
 const groups = [

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import SiteFooterLinks from './components/SiteFooterLinks.vue'
-import { Github, Layers, Moon, Sun } from 'lucide-vue-next'
+import { Github, Moon, Sun } from 'lucide-vue-next'
+import avatar from './assets/avatar.png'
 
 const dark = ref(false)
 onMounted(() => (dark.value = document.documentElement.classList.contains('dark')))
@@ -16,9 +17,7 @@ function toggleTheme() {
     <header class="glass-nav fixed inset-x-0 top-0 z-40 border-b border-line bg-bg/80 transition-colors duration-300">
       <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
         <RouterLink to="/" class="group flex items-center gap-2.5 no-underline">
-          <div class="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 text-white shadow-md shadow-indigo-500/20 transition-transform group-hover:scale-105">
-            <Layers class="size-5" />
-          </div>
+          <img :src="avatar" alt="Lorenzo Concas" width="36" height="36" class="size-9 rounded-full object-cover ring-2 ring-indigo-500/30 shadow-md shadow-indigo-500/20 transition-transform group-hover:scale-105" />
           <span class="font-display text-xl font-bold tracking-tight text-fg">Lorenzo<span class="text-accent">Concas</span></span>
         </RouterLink>
 
@@ -44,7 +43,7 @@ function toggleTheme() {
     <footer class="mt-12 border-t border-line bg-bg py-8">
       <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
         <div class="flex items-center gap-2.5">
-          <div class="flex size-6 items-center justify-center rounded-lg bg-indigo-600 text-white"><Layers class="size-3.5" /></div>
+          <img :src="avatar" alt="" width="24" height="24" class="size-6 rounded-full object-cover" />
           <span class="font-display text-sm font-bold text-fg">Lorenzo Concas</span>
           <span class="ml-1 text-xs text-muted">© {{ new Date().getFullYear() }} · Tutti i marchi appartengono ai rispettivi proprietari.</span>
         </div>

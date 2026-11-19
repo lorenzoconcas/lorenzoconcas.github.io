@@ -21,7 +21,6 @@ useHead(() => ({
     { property: 'og:description', content: app.value.lead },
     { name: 'theme-color', content: '#0b1020' },
   ],
-  link: [{ rel: 'icon', href: app.value.icon }],
 }))
 
 const multi = computed(() => app.value.privacy.length > 1)

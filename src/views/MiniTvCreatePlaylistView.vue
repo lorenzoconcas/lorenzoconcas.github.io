@@ -15,7 +15,6 @@ const lead = 'Crea, importa ed esporta playlist per MiniTV direttamente dal brow
 useHead({
   title,
   meta: [{ name: 'robots', content: 'noindex' }, { name: 'description', content: lead }, { property: 'og:title', content: title }, { property: 'og:description', content: lead }],
-  link: [{ rel: 'icon', href: app.icon }],
 })
 
 interface Row { id: number; e: MiniTVEntry; open: boolean }
