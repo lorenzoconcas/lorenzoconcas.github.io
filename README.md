@@ -86,3 +86,22 @@ This profile is mainly used for development and experimentation.
 Not all production work is public.
 
 ---
+
+---
+
+## 🌐 Sito (App showcase)
+
+Il sito [lorenzoconcas.github.io](https://lorenzoconcas.github.io) raccoglie le mie app (ex repo `products`). Vue 3 + Vite + Tailwind CSS 4, pre-renderizzato con vite-ssg.
+
+```sh
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # build statica in dist/
+npm test
+```
+
+- Dati delle app: `src/data/apps.ts`
+- Testi delle privacy policy: `src/content/privacy/`
+- File statici (MiniTV Web, APK, playlist): `public/`
+- Script di utilità (non pubblicati): `tools/`
+- Deploy: GitHub Actions (`.github/workflows/deploy.yml`); Settings → Pages → Source → **GitHub Actions**.
