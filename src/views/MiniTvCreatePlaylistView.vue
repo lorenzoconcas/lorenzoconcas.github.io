@@ -13,6 +13,7 @@ const base = import.meta.env.BASE_URL
 const title = 'MiniTV – Crea playlist'
 const lead = 'Crea, importa ed esporta playlist per MiniTV direttamente dal browser.'
 useHead({
+  htmlAttrs: { lang: 'it' },
   title,
   meta: [{ name: 'robots', content: 'noindex' }, { name: 'description', content: lead }, { property: 'og:title', content: title }, { property: 'og:description', content: lead }],
 })

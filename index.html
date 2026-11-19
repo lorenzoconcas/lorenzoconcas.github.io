@@ -26,6 +26,28 @@
       {"@context":"https://schema.org","@type":"Person","name":"Lorenzo Concas","url":"https://lorenzoconcas.github.io/","image":"https://lorenzoconcas.github.io/avatar.png","jobTitle":"Sviluppatore","sameAs":["https://github.com/lorenzoconcas"]}
     </script>
     <script>
+      // Reindirizzamento alla lingua preferita: solo dalle pagine italiane (senza prefisso),
+      // così i link condivisi con una lingua esplicita vengono rispettati.
+      (function () {
+        try {
+          var p = location.pathname
+          if (!/^\/(minitv(\/playlists)?|racemap|curalink|spese-immobili)?\/?$/.test(p)) return
+          if (/bot|crawl|spider|slurp|lighthouse|preview|headless/i.test(navigator.userAgent)) return
+          var L = ['it', 'en', 'fr', 'de', 'es', 'pt'], t = null
+          try { t = localStorage.getItem('lang') } catch (e) {}
+          if (L.indexOf(t) < 0) {
+            t = null
+            var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]
+            for (var i = 0; i < prefs.length && !t; i++) {
+              var c = String(prefs[i] || '').slice(0, 2).toLowerCase()
+              if (L.indexOf(c) > -1) t = c
+            }
+          }
+          if (t && t !== 'it') location.replace('/' + t + p.replace(/\/?$/, '/') + location.search + location.hash)
+        } catch (e) {}
+      })()
+    </script>
+    <script>
       // tema salvato (o preferenza di sistema) applicato prima del primo paint
       try {
         var t = localStorage.theme

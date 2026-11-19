@@ -1,22 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import SiteFooterLinks from './components/SiteFooterLinks.vue'
-import { Github, Languages, Moon, Sun } from 'lucide-vue-next'
-import { useRoute, useRouter } from 'vue-router'
-import { LANGS, LANG_NAMES, isLang, localizedPath, stripLang, useI18n } from './i18n'
+import { Github, Moon, Sun } from 'lucide-vue-next'
+import LangPicker from './components/LangPicker.vue'
+import { useI18n } from './i18n'
 import avatar from './assets/avatar.png'
 
-const { t, to, lang } = useI18n()
-const route = useRoute()
-const router = useRouter()
-function changeLang(event: Event) {
-  const next = (event.target as HTMLSelectElement).value
-  if (!isLang(next)) return
-  // L'editor delle playlist esiste solo in italiano: resta sulla stessa pagina.
-  const base = stripLang(route.path)
-  void router.push({ path: localizedPath(next, base), hash: route.hash })
-}
-
+const { t, to } = useI18n()
 const dark = ref(false)
 onMounted(() => (dark.value = document.documentElement.classList.contains('dark')))
 function toggleTheme() {
@@ -43,13 +33,7 @@ function toggleTheme() {
             class="hidden rounded-xl p-2.5 !text-muted transition-colors hover:bg-surface-2 hover:!text-fg sm:inline-flex">
             <Github class="size-4" />
           </a>
-          <label class="relative inline-flex items-center rounded-xl border border-line bg-surface-2 text-muted hover:text-fg">
-            <Languages class="pointer-events-none absolute left-2.5 size-4" />
-            <span class="sr-only">{{ t('nav.lang') }}</span>
-            <select class="cursor-pointer appearance-none rounded-xl bg-transparent py-2 pl-8 pr-3 text-sm font-semibold text-inherit outline-none" :value="lang" :aria-label="t('nav.lang')" @change="changeLang">
-              <option v-for="l in LANGS" :key="l" :value="l" class="normal-case text-slate-900">{{ LANG_NAMES[l] }}</option>
-            </select>
-          </label>
+          <LangPicker />
           <div class="mx-0.5 h-5 w-px bg-line" />
           <button type="button" :aria-label="t('nav.theme')" @click="toggleTheme"
             class="cursor-pointer rounded-xl border border-line bg-surface-2 p-2.5 text-muted transition-all hover:text-fg">
