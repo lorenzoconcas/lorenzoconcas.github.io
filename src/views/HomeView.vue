@@ -3,6 +3,8 @@ import { computed, ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { Mail, Sparkles } from 'lucide-vue-next'
 import AppCard from '../components/AppCard.vue'
+import ProjectCard from '../components/ProjectCard.vue'
+import { projects } from '../data/projects'
 import { apps, CONTACT_EMAIL } from '../data/apps'
 
 const desc = 'Le app di Lorenzo Concas: MiniTV, RaceMap, CuraLink e Spese Immobili.'
@@ -62,6 +64,14 @@ const pill = 'cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transi
 
       <div class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
         <AppCard v-for="a in shown" :key="a.slug" :app="a" />
+      </div>
+
+      <div id="codice" class="mt-20">
+        <h2 class="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">Progetti open source</h2>
+        <p class="mb-8 mt-2 max-w-2xl text-sm text-muted sm:text-base">Alcuni dei miei progetti di codice pubblici, anche su <a href="https://github.com/lorenzoconcas" target="_blank" rel="noopener">GitHub</a>.</p>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ProjectCard v-for="p in projects" :key="p.repo" :project="p" />
+        </div>
       </div>
 
       <div id="contatti" class="mt-16 flex flex-col items-start gap-4 rounded-3xl border border-line bg-surface p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">

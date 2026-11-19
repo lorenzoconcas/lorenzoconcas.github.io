@@ -22,6 +22,10 @@ function toggleTheme() {
         </RouterLink>
 
         <div class="flex items-center gap-2 sm:gap-3">
+          <nav class="mr-1 hidden items-center gap-1 text-sm font-semibold sm:flex">
+            <RouterLink to="/#app" class="rounded-lg px-3 py-2 !text-muted no-underline hover:bg-surface-2 hover:!text-fg">App</RouterLink>
+            <RouterLink to="/#codice" class="rounded-lg px-3 py-2 !text-muted no-underline hover:bg-surface-2 hover:!text-fg">Codice</RouterLink>
+          </nav>
           <a href="https://github.com/lorenzoconcas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
             class="rounded-xl p-2.5 !text-muted transition-colors hover:bg-surface-2 hover:!text-fg">
             <Github class="size-4" />
