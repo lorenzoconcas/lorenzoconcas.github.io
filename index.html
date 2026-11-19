@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppStudio — Vetrina Applicazioni Mobile & Web</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(156, 163, 175, 0.4);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(156, 163, 175, 0.6);
+        }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .hero-grid {
+            background-size: 36px 36px;
+            background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+        }
+        .dark .hero-grid {
+            background-image: radial-gradient(circle, rgba(129, 140, 248, 0.14) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col">
+
+    <!-- 1. MINIMALIST HEADER -->
+    <header class="fixed top-0 inset-x-0 z-40 glass-nav bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/70 dark:border-slate-800/70 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand / Developer Logo -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                        <i data-lucide="layers" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+                        App<span class="text-indigo-600 dark:text-indigo-400">Studio</span>
+                    </span>
+                </a>
+
+                <!-- Social Icons & Light/Dark Toggle -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" class="p-2.5 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+
+                    <div class="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5"></div>
+
+                    <button id="theme-toggle" aria-label="Cambia tema" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-800 transition-all">
+                        <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                        <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. CLEAN, FOCUSED HERO SECTION -->
+    <main class="flex-grow">
+        <section class="relative pt-28 pb-12 sm:pt-36 sm:pb-16 overflow-hidden hero-grid">
+            <!-- Subtle Ambient Glow -->
+            <div class="absolute top-12 left-1/2 -translate-x-1/2 w-[32rem] h-64 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold shadow-sm mb-6">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-500"></i>
+                    <span>App Showcase & Catalogo Digitale</span>
+                </div>
+
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-5">
+                    Le mie <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-500 dark:from-indigo-400 dark:via-violet-400 dark:to-indigo-300">Applicazioni</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    Una raccolta curata delle mie app mobile e web progettate e sviluppate da zero. Esplora le funzionalità, scopri le interfacce e scaricale direttamente dagli store.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. VETRINA DELLE APP (FILTRI + GRIGLIA) -->
+        <section id="apps" class="py-10 sm:py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Interactive Category Filter Pills -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
+                    <div id="filter-container" class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold transition-all bg-slate-900 text-white dark:bg-white dark:text-slate-950 shadow-sm">
+                            Tutte
+                        </button>
+                        <button data-filter="ios" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400">
+                            iOS
+                        </button>
+                        <button data-filter="android" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400">
+                            Android
+                        </button>
+                        <button data-filter="web" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400">
+                            Web App
+                        </button>
+                        <button data-filter="produttivita" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400">
+                            Produttività
+                        </button>
+                        <button data-filter="utility" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400">
+                            Utility
+                        </button>
+                    </div>
+
+                    <div id="apps-counter" class="text-xs font-medium text-slate-500 dark:text-slate-400">
+                        6 applicazioni pubblicate
+                    </div>
+                </div>
+
+                <!-- Grid of Tactile App Cards -->
+                <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Cards injected dynamically via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. MINIMALIST FOOTER -->
+    <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-8 bg-white dark:bg-slate-950 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+                    <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                </div>
+                <span class="font-display font-bold text-sm text-slate-900 dark:text-white">AppStudio</span>
+                <span class="text-slate-400 text-xs ml-1">© 2026</span>
+            </div>
+
+            <div class="flex items-center gap-5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                    <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                    <span>App Store</span>
+                </a>
+                <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                    <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                    <span>Google Play</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE APP DETAIL MODAL -->
+    <div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop -->
+        <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Modal Dialog -->
+        <div class="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-6 sm:p-8">
+            <!-- Close Button -->
+            <button id="close-modal" aria-label="Chiudi dettagli" class="absolute top-5 right-5 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Dynamic Modal Content -->
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Catalogo delle App (Dati completi, anteprime UI e link diretti agli store/repo)
+        const appsData = [
+            {
+                id: 'taskflow',
+                name: 'TaskFlow AI',
+                tagline: 'Pianificazione giornaliera intelligente con timer Focus integrato',
+                categories: ['ios', 'android', 'produttivita'],
+                platforms: ['App Store', 'Google Play'],
+                version: 'v2.4',
+                gradient: 'from-indigo-500 to-violet-600',
+                accentBg: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400',
+                icon: 'check-circle-2',
+                description: 'TaskFlow AI trasforma la tua lista di cose da fare in un piano d’azione realistico. Analizza le priorità, stima i tempi di esecuzione e organizza la giornata automaticamente senza distrazioni.',
+                features: [
+                    'Pianificazione giornaliera automatica basata sulle priorità',
+                    'Sincronizzazione istantanea con Apple Calendar e Google Calendar',
+                    'Modalità Focus con timer Pomodoro e suoni ambientali',
+                    'Widget interattivi per schermata Home e blocco schermo'
+                ],
+                tech: ['SwiftUI', 'React Native', 'OpenAI API', 'Supabase'],
+                links: [
+                    { label: 'Scarica su App Store', icon: 'smartphone', url: 'https://apps.apple.com', primary: true },
+                    { label: 'Disponibile su Google Play', icon: 'play', url: 'https://play.google.com', primary: false }
+                ],
+                screens: [
+                    {
+                        title: 'Panoramica Oggi',
+                        subtitle: '4 task completati su 5',
+                        badge: '80% Completato',
+                        items: [
+                            { label: 'Revisione architettura UI', time: '09:30', done: true },
+                            { label: 'Sincronizzazione database locale', time: '11:00', done: true },
+                            { label: 'Rilascio build TestFlight', time: '15:30', done: false }
+                        ]
+                    },
+                    {
+                        title: 'Modalità Focus',
+                        subtitle: 'Sessione Deep Work attiva',
+                        badge: '25:00 min',
+                        items: [
+                            { label: 'Notifiche silenziate', time: 'Attivo', done: true },
+                            { label: 'Suono ambientale: Pioggia', time: '40%', done: true }
+                        ]
+                    },
+                    {
+                        title: 'Statistiche Settimana',
+                        subtitle: '18.5 ore di concentrazione',
+                        badge: '+14% vs scorsa sett.',
+                        items: [
+                            { label: 'Giorno più produttivo: Martedì', time: '4.2h', done: true },
+                            { label: 'Streak attuale: 12 giorni', time: 'Record', done: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'fitpulse',
+                name: 'FitPulse',
+                tagline: 'Tracker biometrico e analisi del recupero per Apple Watch',
+                categories: ['ios', 'utility'],
+                platforms: ['App Store'],
+                version: 'v3.1',
+                gradient: 'from-rose-500 to-orange-500',
+                accentBg: 'bg-rose-500/10 text-rose-600 dark:text-rose-400',
+                icon: 'activity',
+                description: 'Progettata per sportivi e amanti del benessere, FitPulse legge i dati biometrici da HealthKit per calcolare il tuo indice di recupero mattutino e suggerire il carico di allenamento ideale.',
+                features: [
+                    'Integrazione nativa con Apple HealthKit e Apple Watch',
+                    'Calcolo giornaliero della Readiness e variabilità cardiaca (HRV)',
+                    'Grafici dettagliati sulle zone di frequenza cardiaca',
+                    'Complicazioni WatchOS ultra-leggibili e a basso consumo'
+                ],
+                tech: ['Swift', 'SwiftUI', 'HealthKit', 'CloudKit'],
+                links: [
+                    { label: 'Scarica su App Store', icon: 'smartphone', url: 'https://apps.apple.com', primary: true }
+                ],
+                screens: [
+                    {
+                        title: 'Indice Recupero',
+                        subtitle: 'Pronto per allenamento intenso',
+                        badge: '92 / 100',
+                        items: [
+                            { label: 'HRV Notturna', time: '68 ms', done: true },
+                            { label: 'Frequenza a riposo', time: '51 bpm', done: true },
+                            { label: 'Qualità del sonno', time: '7h 45m', done: true }
+                        ]
+                    },
+                    {
+                        title: 'Ultimo Allenamento',
+                        subtitle: 'Corsa all’aperto • 8.4 km',
+                        badge: '4:42 /km',
+                        items: [
+                            { label: 'Calorie attive bruciate', time: '540 kcal', done: true },
+                            { label: 'Zona cardiaca prevalente', time: 'Zona 3', done: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'budgetzen',
+                name: 'BudgetZen',
+                tagline: 'Gestione spese minimalista e monitoraggio abbonamenti',
+                categories: ['ios', 'android', 'web', 'utility'],
+                platforms: ['App Store', 'Google Play', 'Web App'],
+                version: 'v1.9',
+                gradient: 'from-emerald-500 to-teal-600',
+                accentBg: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+                icon: 'wallet',
+                description: 'Prendi il controllo delle tue finanze in pochi secondi al giorno. BudgetZen categorizza le uscite, rileva gli abbonamenti ricorrenti e visualizza i tuoi progressi verso gli obiettivi di risparmio.',
+                features: [
+                    'Architettura privacy-first: tutti i dati restano crittografati',
+                    'Rilevamento automatico abbonamenti e scadenze mensili',
+                    'Salvadanaio visivo con obiettivi personalizzati',
+                    'Disponibile su smartphone e sincronizzata via Web App'
+                ],
+                tech: ['Flutter', 'Next.js', 'TypeScript', 'PostgreSQL'],
+                links: [
+                    { label: 'Scarica su App Store', icon: 'smartphone', url: 'https://apps.apple.com', primary: true },
+                    { label: 'Disponibile su Google Play', icon: 'play', url: 'https://play.google.com', primary: false },
+                    { label: 'Apri Web App', icon: 'globe', url: 'https://example.com', primary: false }
+                ],
+                screens: [
+                    {
+                        title: 'Bilancio Mensile',
+                        subtitle: 'Novembre 2026',
+                        badge: '+€ 640,00',
+                        items: [
+                            { label: 'Budget Ristoranti & Svago', time: '65% usato', done: true },
+                            { label: 'Abbonamenti Ricorrenti', time: '€ 42,90/m', done: true },
+                            { label: 'Obiettivo Viaggio Giappone', time: '78%', done: true }
+                        ]
+                    },
+                    {
+                        title: 'Ultime Transazioni',
+                        subtitle: 'Inserimento rapido',
+                        badge: 'Oggi',
+                        items: [
+                            { label: 'Spesa Supermercato', time: '-€ 38,50', done: true },
+                            { label: 'Caffè & Colazione', time: '-€ 3,20', done: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'notecraft',
+                name: 'NoteCraft Studio',
+                tagline: 'Editor Markdown local-first con grafo delle conoscenze',
+                categories: ['web', 'produttivita'],
+                platforms: ['Web App'],
+                version: 'v2.0',
+                gradient: 'from-sky-500 to-blue-600',
+                accentBg: 'bg-sky-500/10 text-sky-600 dark:text-sky-400',
+                icon: 'file-text',
+                description: 'Uno spazio di lavoro ultraveloce per appunti tecnici, documentazione e idee. Supporta collegamenti bidirezionali tra note, blocchi di codice con syntax highlighting e funzionamento 100% offline.',
+                features: [
+                    'Editor Markdown live con scorciatoie da tastiera',
+                    'Grafo interattivo per esplorare i collegamenti tra i documenti',
+                    'Archiviazione local-first nel browser senza latenza',
+                    'Esportazione istantanea in Markdown, HTML e PDF'
+                ],
+                tech: ['React', 'TypeScript', 'Tailwind CSS', 'IndexedDB'],
+                links: [
+                    { label: 'Apri Web App', icon: 'globe', url: 'https://example.com', primary: true },
+                    { label: 'Codice Sorgente', icon: 'github', url: 'https://github.com', primary: false }
+                ],
+                screens: [
+                    {
+                        title: 'Architettura_App.md',
+                        subtitle: 'Modificato 2 min fa • 1.240 parole',
+                        badge: 'Offline Ready',
+                        items: [
+                            { label: '# Pattern Local-First', time: 'H1', done: true },
+                            { label: 'Collegato a: [[Database_Sync]]', time: 'Link', done: true },
+                            { label: 'Blocco codice TypeScript', time: '24 righe', done: true }
+                        ]
+                    },
+                    {
+                        title: 'Grafo Conoscenze',
+                        subtitle: '48 note collegate',
+                        badge: 'Vista Interattiva',
+                        items: [
+                            { label: 'Cluster: Sviluppo Mobile', time: '19 note', done: true },
+                            { label: 'Cluster: Design System', time: '14 note', done: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'meteosmart',
+                name: 'MeteoSmart',
+                tagline: 'Previsioni iperlocali al minuto con radar precipitazioni HD',
+                categories: ['ios', 'android', 'utility'],
+                platforms: ['App Store', 'Google Play'],
+                version: 'v4.2',
+                gradient: 'from-amber-400 to-orange-500',
+                accentBg: 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
+                icon: 'cloud-sun',
+                description: 'Non farti mai più sorprendere dalla pioggia. MeteoSmart elabora dati satellitari ad alta risoluzione per indicare esattamente tra quanti minuti inizierà o smetterà di piovere nella tua posizione.',
+                features: [
+                    'Avvisi iperlocali al minuto ("Pioggia leggera tra 12 minuti")',
+                    'Mappa radar interattiva ad alta definizione',
+                    'Indice UV, qualità dell’aria e vento in tempo reale',
+                    'Interfaccia dinamica che si adatta alle condizioni atmosferiche'
+                ],
+                tech: ['React Native', 'Mapbox GL', 'Node.js', 'WeatherKit'],
+                links: [
+                    { label: 'Scarica su App Store', icon: 'smartphone', url: 'https://apps.apple.com', primary: true },
+                    { label: 'Disponibile su Google Play', icon: 'play', url: 'https://play.google.com', primary: false }
+                ],
+                screens: [
+                    {
+                        title: 'Cagliari, Sardegna',
+                        subtitle: 'Cielo sereno • Brezza leggera',
+                        badge: '22°C',
+                        items: [
+                            { label: 'Probabilità pioggia prossime 2h', time: '0%', done: true },
+                            { label: 'Indice UV attuale', time: 'Moderato (4)', done: true },
+                            { label: 'Qualità dell’aria (AQI)', time: 'Ottima (18)', done: true }
+                        ]
+                    },
+                    {
+                        title: 'Radar Precipitazioni',
+                        subtitle: 'Aggiornamento satellitare live',
+                        badge: 'HD Live',
+                        items: [
+                            { label: 'Visibilità costa sud', time: '> 20 km', done: true },
+                            { label: 'Tramonto previsto', time: '17:14', done: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'devpulse',
+                name: 'DevPulse Monitor',
+                tagline: 'Monitoraggio uptime e latenza API in tempo reale',
+                categories: ['web', 'ios', 'produttivita'],
+                platforms: ['Web App', 'App Store'],
+                version: 'v1.6',
+                gradient: 'from-slate-700 to-slate-900',
+                accentBg: 'bg-slate-500/10 text-slate-700 dark:text-slate-300',
+                icon: 'terminal',
+                description: 'Controlla lo stato di salute dei tuoi servizi web e API ovunque ti trovi. Ricevi notifiche push istantanee in caso di anomalie e consulta i tempi di risposta da diverse regioni del mondo.',
+                features: [
+                    'Controlli health-check ogni 30 secondi da 12 nodi globali',
+                    'Notifiche push critiche e webhook personalizzabili',
+                    'Monitoraggio scadenza certificati SSL e domini',
+                    'Dashboard web responsive con grafici di latenza p95/p99'
+                ],
+                tech: ['Next.js', 'Go', 'SwiftUI', 'Redis'],
+                links: [
+                    { label: 'Apri Web App', icon: 'globe', url: 'https://example.com', primary: true },
+                    { label: 'Scarica su App Store', icon: 'smartphone', url: 'https://apps.apple.com', primary: false },
+                    { label: 'Codice Sorgente', icon: 'github', url: 'https://github.com', primary: false }
+                ],
+                screens: [
+                    {
+                        title: 'Stato Infrastruttura',
+                        subtitle: 'Tutti i 6 endpoint operativi',
+                        badge: '99.98% Uptime',
+                        items: [
+                            { label: 'api.appstudio.it', time: '42 ms', done: true },
+                            { label: 'auth.appstudio.it', time: '38 ms', done: true },
+                            { label: 'Certificato SSL', time: 'Valido (84g)', done: true }
+                        ]
+                    },
+                    {
+                        title: 'Latenza Globale',
+                        subtitle: 'Media ultime 24 ore',
+                        badge: '45 ms',
+                        items: [
+                            { label: 'Europa (Francoforte / Milano)', time: '24 ms', done: true },
+                            { label: 'Nord America (Virginia)', time: '89 ms', done: true }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // 2. Renderizza le Card nella Griglia (con anteprima UI integrata)
+        const appsGrid = document.getElementById('apps-grid');
+        const appsCounter = document.getElementById('apps-counter');
+
+        function renderApps(filter = 'all') {
+            appsGrid.innerHTML = '';
+            const filtered = filter === 'all' 
+                ? appsData 
+                : appsData.filter(app => app.categories.includes(filter));
+
+            appsCounter.textContent = filtered.length === 1 
+                ? '1 applicazione mostrata' 
+                : `${filtered.length} applicazioni mostrate`;
+
+            filtered.forEach(app => {
+                const card = document.createElement('article');
+                card.className = 'group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer';
+                card.onclick = () => openAppModal(app.id);
+
+                const platformBadges = app.platforms.map(p => {
+                    let icon = 'smartphone';
+                    if (p.includes('Google')) icon = 'play';
+                    if (p.includes('Web')) icon = 'globe';
+                    return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300">
+                        <i data-lucide="${icon}" class="w-3 h-3 opacity-75"></i>
+                        ${p}
+                    </span>`;
+                }).join('');
+
+                const previewScreen = app.screens[0];
+                const previewRows = previewScreen.items.slice(0, 2).map(item => `
+                    <div class="flex items-center justify-between text-[11px] py-1.5 px-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">
+                        <span class="font-medium text-slate-700 dark:text-slate-300 truncate pr-2">${item.label}</span>
+                        <span class="font-semibold text-slate-400 shrink-0">${item.time}</span>
+                    </div>
+                `).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Header Card: Icon + Version -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                                <i data-lucide="${app.icon}" class="w-7 h-7"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                                ${app.version}
+                            </span>
+                        </div>
+
+                        <!-- Title & One-line Description -->
+                        <h2 class="font-display font-bold text-xl text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-1.5">
+                            ${app.name}
+                        </h2>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">
+                            ${app.tagline}
+                        </p>
+
+                        <!-- Subtle Simulated UI Preview Box -->
+                        <div class="rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200/70 dark:border-slate-800/80 p-3.5 mb-5 group-hover:border-indigo-500/30 transition-colors">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span class="text-[11px] font-bold text-slate-800 dark:text-slate-200">${previewScreen.title}</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${app.accentBg}">${previewScreen.badge}</span>
+                            </div>
+                            <div class="space-y-1.5">
+                                ${previewRows}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Card: Platform Badges + Action -->
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2">
+                        <div class="flex flex-wrap gap-1.5">
+                            ${platformBadges}
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400 group-hover:translate-x-0.5 transition-transform shrink-0">
+                            Esplora
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                `;
+                appsGrid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // 3. Logica Filtri Categoria
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.className = 'filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400';
+                });
+                btn.className = 'filter-btn active px-4 py-2 rounded-full text-sm font-semibold transition-all bg-slate-900 text-white dark:bg-white dark:text-slate-950 shadow-sm';
+                
+                renderApps(btn.dataset.filter);
+            });
+        });
+
+        // 4. Modale Dettagli App con Carosello Schermate UI Interattivo
+        const modal = document.getElementById('app-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+
+        let currentApp = null;
+        let currentScreenIndex = 0;
+
+        function renderCarouselScreen() {
+            if (!currentApp) return;
+            const screen = currentApp.screens[currentScreenIndex];
+            const container = document.getElementById('modal-screen-viewer');
+            const dotsContainer = document.getElementById('modal-screen-dots');
+            const counterLabel = document.getElementById('modal-screen-counter');
+
+            if (!container) return;
+
+            const itemsHTML = screen.items.map(item => `
+                <div class="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 shadow-sm">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-2 h-2 rounded-full bg-indigo-500"></div>
+                        <span class="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200">${item.label}</span>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${item.time}</span>
+                </div>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h5 class="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white">${screen.title}</h5>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">${screen.subtitle}</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full text-xs font-bold ${currentApp.accentBg}">
+                        ${screen.badge}
+                    </span>
+                </div>
+                <div class="space-y-2.5">
+                    ${itemsHTML}
+                </div>
+            `;
+
+            counterLabel.textContent = `Schermata ${currentScreenIndex + 1} di ${currentApp.screens.length}`;
+
+            dotsContainer.innerHTML = currentApp.screens.map((_, idx) => `
+                <button onclick="goToScreen(${idx})" aria-label="Vai alla schermata ${idx + 1}" class="h-2 rounded-full transition-all ${idx === currentScreenIndex ? 'w-6 bg-indigo-600 dark:bg-indigo-400' : 'w-2 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400'}"></button>
+            `).join('');
+        }
+
+        function prevScreen() {
+            if (!currentApp) return;
+            currentScreenIndex = (currentScreenIndex - 1 + currentApp.screens.length) % currentApp.screens.length;
+            renderCarouselScreen();
+        }
+
+        function nextScreen() {
+            if (!currentApp) return;
+            currentScreenIndex = (currentScreenIndex + 1) % currentApp.screens.length;
+            renderCarouselScreen();
+        }
+
+        function goToScreen(index) {
+            currentScreenIndex = index;
+            renderCarouselScreen();
+        }
+
+        function openAppModal(appId) {
+            const app = appsData.find(a => a.id === appId);
+            if (!app) return;
+
+            currentApp = app;
+            currentScreenIndex = 0;
+
+            const techBadges = app.tech.map(t => 
+                `<span class="px-3 py-1 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/70 dark:border-slate-700/70">${t}</span>`
+            ).join('');
+
+            const featuresList = app.features.map(f => 
+                `<li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                    <span>${f}</span>
+                </li>`
+            ).join('');
+
+            const actionLinks = app.links.map(link => {
+                const btnStyle = link.primary
+                    ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-600/20'
+                    : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white';
+                return `
+                    <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-all ${btnStyle}">
+                        <i data-lucide="${link.icon}" class="w-4 h-4"></i>
+                        <span>${link.label}</span>
+                    </a>
+                `;
+            }).join('');
+
+            modalContent.innerHTML = `
+                <!-- Modal Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 pr-8">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br ${app.gradient} text-white flex items-center justify-center shadow-lg shrink-0">
+                        <i data-lucide="${app.icon}" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white">${app.name}</h3>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold">
+                                ${app.version}
+                            </span>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-1">${app.tagline}</p>
+                    </div>
+                </div>
+
+                <!-- Interactive UI Screens Carousel -->
+                <div class="rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 p-4 sm:p-5 mb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span id="modal-screen-counter" class="text-xs font-bold uppercase tracking-wider text-slate-400">Schermata 1 di ${app.screens.length}</span>
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="prevScreen()" aria-label="Schermata precedente" class="p-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 transition-colors">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="nextScreen()" aria-label="Schermata successiva" class="p-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 transition-colors">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="modal-screen-viewer" class="min-h-[168px]"></div>
+
+                    <div id="modal-screen-dots" class="flex items-center justify-center gap-1.5 mt-4"></div>
+                </div>
+
+                <!-- Full Description -->
+                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                    ${app.description}
+                </p>
+
+                <!-- Features & Tech Stack -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-3">Caratteristiche Principali</h4>
+                        <ul class="space-y-2.5">
+                            ${featuresList}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-3">Tecnologie Utilizzate</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${techBadges}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Store / Launch Buttons -->
+                <div class="pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-3">
+                    ${actionLinks}
+                </div>
+            `;
+
+            renderCarouselScreen();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+            currentApp = null;
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft') prevScreen();
+                if (e.key === 'ArrowRight') nextScreen();
+            }
+        });
+
+        // 5. Dark / Light Mode Toggle con persistenza localStorage
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+        } else {
+            htmlEl.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            localStorage.theme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        // Inizializzazione
+        renderApps('all');
+        lucide.createIcons();
+    </script>
+</body>
+</html>
