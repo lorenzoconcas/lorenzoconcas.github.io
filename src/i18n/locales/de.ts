@@ -7,7 +7,7 @@ export const de: Locale = {
     'nav.theme': 'Design wechseln',
     'nav.lang': 'Sprache',
     'home.title': 'Lorenzo Concas – Apps für iOS, macOS und Android',
-    'home.desc': 'Die Apps von Lorenzo Concas: MiniTV, RaceMap, CuraLink und Spese Immobili.',
+    'home.desc': 'Die Apps von Lorenzo Concas: TravelBuddy, MiniTV, RaceMap, CuraLink und Spese Immobili.',
     'home.ogTitle': 'Lorenzo Concas – Apps',
     'home.badge': 'App-Showcase',
     'home.heroA': 'Meine',
@@ -27,6 +27,7 @@ export const de: Locale = {
     'card.icon': '{name}-Symbol',
     'link.appStore': 'App Store',
     'link.apk': 'Android-APK',
+    'link.testflight': 'TestFlight',
     'link.webApp': 'Web-App öffnen',
     'platform.androidSoon': 'Android in Kürze',
     'project.code': 'Code',
@@ -45,6 +46,7 @@ export const de: Locale = {
     'store.ios': 'Laden im App Store',
     'store.mac': 'Laden im Mac App Store',
     'store.apk': 'Android-APK herunterladen',
+    'store.testflight': 'Auf TestFlight testen',
     'store.web': 'Web-App öffnen',
     'extras.m3u': 'Beispiel einer M3U-Playlist ansehen',
     'extras.json': 'Beispiel einer JSON-Playlist',
@@ -73,6 +75,18 @@ export const de: Locale = {
     'footer.contacts': 'Kontakt',
   },
   apps: {
+    travelbuddy: {
+      title: 'TravelBuddy – Reisen, Dokumente und Erinnerungen, mit KI auf dem Gerät',
+      summary: 'Organisiere Reisen, Dokumente und Erinnerungen und markiere besuchte Länder auf der Karte. Mit Apple Intelligence bleibt alles auf deinem Gerät. Auf TestFlight.',
+      lead: 'Plane deine Reisen, sammle Tickets, Dokumente und Erinnerungen und rubble auf der Karte die Länder frei, die du besucht hast. Mit Apple Intelligence läuft die KI vollständig auf dem Gerät.',
+      features: [
+        { title: 'Reisen mit Tagen und Stationen', text: 'Plane Routen, Orte auf der Karte, Budget und Checklisten für jede Reise.' },
+        { title: 'Dokumente und Erinnerungen', text: 'Tickets, PDFs, Scans, Fotos und Notizen pro Reise gesammelt, immer griffbereit, auch offline.' },
+        { title: 'Karte der besuchten Länder', text: 'Eine Weltkarte zum Freirubbeln mit Statistiken zu den Ländern, in denen du warst.' },
+        { title: 'KI auf dem Gerät', text: 'Routenentwürfe, Zusammenfassungen und Vorschläge mit Apple Intelligence, ohne deine Daten an externe Server zu senden.' },
+      ],
+      notes: ['Hinweis: Die App wird auf TestFlight getestet und ist nur für iOS. Für die KI-Funktionen wird ein Gerät mit Apple Intelligence (iOS 26 oder neuer) empfohlen.'],
+    },
     minitv: {
       title: 'MiniTV – Player für Radio und Video-Streaming für iOS, macOS und Android',
       summary: 'Ein schlanker Player für Streaming-Radio und -Video. Füge deine Playlists hinzu und ordne die Sender in einem übersichtlichen, schnellen Raster an.',

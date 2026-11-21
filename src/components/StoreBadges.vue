@@ -16,9 +16,11 @@ const badge = {
 <template>
   <div class="mt-6 flex flex-wrap items-center gap-3">
     <template v-for="s in stores" :key="s.kind + s.href">
-      <a v-if="s.kind !== 'web'" :href="s.href" target="_blank" rel="noopener noreferrer" :aria-label="t(badge[s.kind].key)">
+      <a v-if="s.kind !== 'web' && s.kind !== 'testflight'" :href="s.href" target="_blank" rel="noopener noreferrer" :aria-label="t(badge[s.kind].key)">
         <img :src="badge[s.kind].src" :alt="t(badge[s.kind].key)" :style="{ height: badge[s.kind].h + 'px', width: 'auto' }" />
       </a>
+      <a v-else-if="s.kind === 'testflight'" :href="s.href" target="_blank" rel="noopener noreferrer"
+        class="inline-flex rounded-xl bg-accent px-4 py-2.5 text-base font-semibold !text-white no-underline transition hover:-translate-y-px">{{ t('store.testflight') }}</a>
       <a v-else :href="s.href" target="_blank" rel="noopener noreferrer"
         class="inline-flex rounded-xl bg-accent px-4 py-2.5 text-base font-semibold !text-white no-underline transition hover:-translate-y-px">{{ t('store.web') }}</a>
     </template>

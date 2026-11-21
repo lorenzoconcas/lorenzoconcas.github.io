@@ -7,7 +7,7 @@ export const en: Locale = {
     'nav.theme': 'Toggle theme',
     'nav.lang': 'Language',
     'home.title': 'Lorenzo Concas – Apps for iOS, macOS and Android',
-    'home.desc': "Lorenzo Concas's apps: MiniTV, RaceMap, CuraLink and Spese Immobili.",
+    'home.desc': "Lorenzo Concas's apps: TravelBuddy, MiniTV, RaceMap, CuraLink and Spese Immobili.",
     'home.ogTitle': 'Lorenzo Concas – Apps',
     'home.badge': 'App Showcase',
     'home.heroA': 'My',
@@ -27,6 +27,7 @@ export const en: Locale = {
     'card.icon': '{name} icon',
     'link.appStore': 'App Store',
     'link.apk': 'Android APK',
+    'link.testflight': 'TestFlight',
     'link.webApp': 'Open the web app',
     'platform.androidSoon': 'Android coming soon',
     'project.code': 'Code',
@@ -45,6 +46,7 @@ export const en: Locale = {
     'store.ios': 'Download on the App Store',
     'store.mac': 'Download on the Mac App Store',
     'store.apk': 'Download the Android APK',
+    'store.testflight': 'Try it on TestFlight',
     'store.web': 'Open the web app',
     'extras.m3u': 'See an example M3U playlist',
     'extras.json': 'Example JSON playlist',
@@ -73,6 +75,18 @@ export const en: Locale = {
     'footer.contacts': 'Contact',
   },
   apps: {
+    travelbuddy: {
+      title: 'TravelBuddy – Trips, documents and memories, with on-device AI',
+      summary: 'Organize trips, documents and memories and mark the countries you\'ve visited on the map. With Apple Intelligence everything stays on your device. On TestFlight.',
+      lead: 'Plan your trips, collect tickets, documents and memories, and scratch off the countries you\'ve visited on the map. With Apple Intelligence, AI runs entirely on your device.',
+      features: [
+        { title: 'Trips with days and stops', text: 'Plan itineraries, places on the map, budget and checklists for every trip.' },
+        { title: 'Documents and memories', text: 'Tickets, PDFs, scans, photos and notes collected per trip, always at hand, even offline.' },
+        { title: 'Map of visited countries', text: 'A scratch-off world map with statistics on the countries you\'ve been to.' },
+        { title: 'On-device AI', text: 'Itinerary drafts, summaries and suggestions with Apple Intelligence, without sending your data to external servers.' },
+      ],
+      notes: ['Note: the app is being tested on TestFlight and is iOS only. A device with Apple Intelligence (iOS 26 or later) is recommended for the AI features.'],
+    },
     minitv: {
       title: 'MiniTV – Radio and video streaming player for iOS, macOS and Android',
       summary: 'A lightweight player for streaming radio and video. Add your playlists and organize channels in a clean, fast grid.',

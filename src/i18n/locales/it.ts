@@ -5,7 +5,7 @@ export const ui = {
   'nav.theme': 'Cambia tema',
   'nav.lang': 'Lingua',
   'home.title': 'Lorenzo Concas – App per iOS, macOS e Android',
-  'home.desc': 'Le app di Lorenzo Concas: MiniTV, RaceMap, CuraLink e Spese Immobili.',
+  'home.desc': 'Le app di Lorenzo Concas: TravelBuddy, MiniTV, RaceMap, CuraLink e Spese Immobili.',
   'home.ogTitle': 'Lorenzo Concas – App',
   'home.badge': 'App Showcase',
   'home.heroA': 'Le mie',
@@ -25,6 +25,7 @@ export const ui = {
   'card.icon': 'Icona {name}',
   'link.appStore': 'App Store',
   'link.apk': 'APK Android',
+  'link.testflight': 'TestFlight',
   'link.webApp': "Apri l'app web",
   'platform.androidSoon': 'Android in arrivo',
   'project.code': 'Codice',
@@ -43,6 +44,7 @@ export const ui = {
   'store.ios': 'Scarica da App Store',
   'store.mac': 'Scarica da Mac App Store',
   'store.apk': 'Scarica APK per Android',
+  'store.testflight': 'Provalo su TestFlight',
   'store.web': "Apri l'app web",
   'extras.m3u': 'Vedi un esempio di playlist M3U',
   'extras.json': 'Esempio di playlist JSON',
@@ -80,7 +82,7 @@ export interface AppText {
   features: { title: string; text: string }[]
   notes: string[]
 }
-export type AppSlug = 'minitv' | 'racemap' | 'curalink' | 'spese-immobili'
+export type AppSlug = 'travelbuddy' | 'minitv' | 'racemap' | 'curalink' | 'spese-immobili'
 export type ProjectKey =
   | 'HSB'
   | 'GeniaLogic'

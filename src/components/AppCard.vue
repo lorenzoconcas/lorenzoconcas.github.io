@@ -10,7 +10,7 @@ const summary = computed(() => text.value?.summary ?? props.app.summary)
 const platformIcon = (p: string) => (/web/i.test(p) ? Globe : /mac|android/i.test(p) ? Monitor : Smartphone)
 const platformLabel = (p: string) => (p === 'Android in arrivo' ? t('platform.androidSoon') : p)
 const linkLabel = (label: string) =>
-  label === 'App Store' ? t('link.appStore') : label === 'APK Android' ? t('link.apk') : label === "Apri l'app web" ? t('link.webApp') : label
+  label === 'App Store' ? t('link.appStore') : label === 'TestFlight' ? t('link.testflight') : label === 'APK Android' ? t('link.apk') : label === "Apri l'app web" ? t('link.webApp') : label
 </script>
 
 <template>

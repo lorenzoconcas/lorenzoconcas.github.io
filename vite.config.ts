@@ -13,7 +13,7 @@ export default defineConfig({
     dirStyle: 'nested',
     // Una pagina per lingua: l'italiano alla radice, le altre sotto /<lang>.
     includedRoutes() {
-      const pages = ['/', '/minitv', '/minitv/playlists', '/racemap', '/curalink', '/spese-immobili']
+      const pages = ['/', '/minitv', '/minitv/playlists', '/travelbuddy', '/racemap', '/curalink', '/spese-immobili']
       const langs = ['en', 'fr', 'de', 'es', 'pt']
       return [
         ...pages,

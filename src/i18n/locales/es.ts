@@ -7,7 +7,7 @@ export const es: Locale = {
     'nav.theme': 'Cambiar tema',
     'nav.lang': 'Idioma',
     'home.title': 'Lorenzo Concas – Apps para iOS, macOS y Android',
-    'home.desc': 'Las apps de Lorenzo Concas: MiniTV, RaceMap, CuraLink y Spese Immobili.',
+    'home.desc': 'Las apps de Lorenzo Concas: TravelBuddy, MiniTV, RaceMap, CuraLink y Spese Immobili.',
     'home.ogTitle': 'Lorenzo Concas – Apps',
     'home.badge': 'Escaparate de apps',
     'home.heroA': 'Mis',
@@ -27,6 +27,7 @@ export const es: Locale = {
     'card.icon': 'Icono de {name}',
     'link.appStore': 'App Store',
     'link.apk': 'APK de Android',
+    'link.testflight': 'TestFlight',
     'link.webApp': 'Abrir la app web',
     'platform.androidSoon': 'Android próximamente',
     'project.code': 'Código',
@@ -45,6 +46,7 @@ export const es: Locale = {
     'store.ios': 'Descargar en App Store',
     'store.mac': 'Descargar en Mac App Store',
     'store.apk': 'Descargar el APK de Android',
+    'store.testflight': 'Pruébala en TestFlight',
     'store.web': 'Abrir la app web',
     'extras.m3u': 'Ver un ejemplo de lista M3U',
     'extras.json': 'Ejemplo de lista JSON',
@@ -73,6 +75,18 @@ export const es: Locale = {
     'footer.contacts': 'Contacto',
   },
   apps: {
+    travelbuddy: {
+      title: 'TravelBuddy – Viajes, documentos y recuerdos, con IA en el dispositivo',
+      summary: 'Organiza viajes, documentos y recuerdos y marca en el mapa los países visitados. Con Apple Intelligence todo se queda en tu dispositivo. En TestFlight.',
+      lead: 'Planifica tus viajes, reúne billetes, documentos y recuerdos y rasca en el mapa los países que has visitado. Con Apple Intelligence, la IA funciona por completo en el dispositivo.',
+      features: [
+        { title: 'Viajes con días y paradas', text: 'Planifica itinerarios, lugares en el mapa, presupuesto y listas de tareas para cada viaje.' },
+        { title: 'Documentos y recuerdos', text: 'Billetes, PDF, escaneos, fotos y notas reunidos por viaje, siempre a mano, incluso sin conexión.' },
+        { title: 'Mapa de países visitados', text: 'Un mapa del mundo para rascar con estadísticas de los países en los que has estado.' },
+        { title: 'IA en el dispositivo', text: 'Borradores de itinerario, resúmenes y sugerencias con Apple Intelligence, sin enviar tus datos a servidores externos.' },
+      ],
+      notes: ['Nota: la app está en pruebas en TestFlight y solo para iOS. Para las funciones de IA se recomienda un dispositivo con Apple Intelligence (iOS 26 o posterior).'],
+    },
     minitv: {
       title: 'MiniTV – Reproductor de radio y vídeo en streaming para iOS, macOS y Android',
       summary: 'Un reproductor ligero para radio y vídeo en streaming. Añade tus listas y organiza los canales en una cuadrícula limpia y rápida.',

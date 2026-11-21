@@ -1,8 +1,10 @@
+import travelbuddyIcon from '../assets/apps/travelbuddy.png'
 import minitvIcon from '../assets/apps/minitv.png'
 import racemapIcon from '../assets/apps/racemap.png'
 import curalinkIcon from '../assets/apps/curalink.png'
 import speseIcon from '../assets/apps/spese-immobili.png'
 
+import travelbuddyPrivacy from '../content/privacy/travelbuddy.html?raw'
 import minitvPrivacy from '../content/privacy/minitv.html?raw'
 import racemapPrivacy from '../content/privacy/racemap.html?raw'
 import curalinkPrivacy from '../content/privacy/curalink.html?raw'
@@ -16,7 +18,7 @@ import spesePrivacyPt from '../content/privacy/spese-immobili.pt.html?raw'
 export const CONTACT_EMAIL = 'lore.appstore@outlook.com'
 const base = import.meta.env.BASE_URL
 
-export type StoreKind = 'ios' | 'mac' | 'apk' | 'web'
+export type StoreKind = 'ios' | 'mac' | 'apk' | 'web' | 'testflight'
 
 export interface Store { kind: StoreKind; href: string }
 export interface PrivacyDoc { lang: string; label: string; heading: string; html: string }
@@ -39,6 +41,28 @@ export interface AppInfo {
 }
 
 export const apps: AppInfo[] = [
+  {
+    slug: 'travelbuddy',
+    name: 'TravelBuddy',
+    title: 'TravelBuddy – Viaggi, documenti e ricordi, con AI sul dispositivo',
+    summary: 'Organizza viaggi, documenti e ricordi e segna sulla mappa i paesi visitati. Con Apple Intelligence tutto resta sul dispositivo. In TestFlight.',
+    lead: 'Pianifica i tuoi viaggi, raccogli biglietti, documenti e ricordi e gratta sulla mappa i paesi che hai visitato. Con Apple Intelligence l’AI gira interamente sul dispositivo.',
+    icon: travelbuddyIcon,
+    color: '#1f5fbf',
+    platforms: ['iOS', 'TestFlight'],
+    features: [
+      { title: 'Viaggi con giorni e tappe', text: 'Pianifica itinerari, luoghi sulla mappa, budget e checklist per ogni viaggio.' },
+      { title: 'Documenti e ricordi', text: 'Biglietti, PDF, scansioni, foto e note raccolti per viaggio, sempre a portata di mano anche offline.' },
+      { title: 'Mappa dei paesi visitati', text: 'Una mappa del mondo da grattare con le statistiche dei paesi in cui sei stato.' },
+      { title: 'AI sul dispositivo', text: 'Bozze di itinerario, riassunti e consigli con Apple Intelligence, senza inviare i tuoi dati a server esterni.' },
+    ],
+    stores: [{ kind: 'testflight', href: 'https://testflight.apple.com/join/Ayu98fGc' }],
+    notes: [
+      'Nota: l’app è in fase di test su TestFlight e solo per iOS. Per le funzioni AI è consigliato un dispositivo con Apple Intelligence (iOS 26 o successivo).',
+    ],
+    privacy: [{ lang: 'it', label: 'Italiano', heading: 'Privacy Policy', html: travelbuddyPrivacy }],
+    homeLinks: [{ label: 'TestFlight', href: 'https://testflight.apple.com/join/Ayu98fGc', external: true }],
+  },
   {
     slug: 'minitv',
     name: 'MiniTV',
