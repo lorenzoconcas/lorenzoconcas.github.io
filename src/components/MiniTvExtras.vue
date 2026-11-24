@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '../i18n'
 const { t, to } = useI18n()
+const showItalianPlaylists = __ITALIAN_PLAYLISTS__
 const m3u = `#EXTM3U
 # NOTE: Playlist di esempio senza contenuti protetti. Sostituisci gli URL con sorgenti autorizzate.
 #EXTINF:-1 tvg-id="" tvg-name="Canale Pubblico 1 (Esempio)" tvg-logo="" group-title="Italia", Canale Pubblico 1 (Esempio)
@@ -32,7 +33,7 @@ const btn = 'inline-flex items-center gap-2 rounded-xl border border-line bg-sur
     <summary class="cursor-pointer font-medium">{{ t('extras.json') }}</summary>
     <pre class="mt-3">{{ json }}</pre>
   </details>
-  <details class="mt-4">
+  <details v-if="showItalianPlaylists" class="mt-4">
     <summary class="cursor-pointer font-medium">{{ t('extras.tv') }}</summary>
     <div class="mt-3"><RouterLink :to="to('/minitv/playlists')" :class="btn">{{ t('extras.button') }}</RouterLink></div>
   </details>

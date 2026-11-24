@@ -7,7 +7,7 @@ export const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('./views/HomeView.vue') },
       { path: 'minitv', component: () => import('./views/AppView.vue'), props: { slug: 'minitv' } },
-      { path: 'minitv/playlists', component: () => import('./views/MiniTvPlaylistsView.vue') },
+      ...(__ITALIAN_PLAYLISTS__ ? [{ path: 'minitv/playlists', component: () => import('./views/MiniTvPlaylistsView.vue') }] : []),
       { path: 'minitv/crea-playlist', component: () => import('./views/MiniTvCreatePlaylistView.vue') },
       { path: 'travelbuddy', component: () => import('./views/AppView.vue'), props: { slug: 'travelbuddy' } },
       { path: 'racemap', component: () => import('./views/AppView.vue'), props: { slug: 'racemap' } },

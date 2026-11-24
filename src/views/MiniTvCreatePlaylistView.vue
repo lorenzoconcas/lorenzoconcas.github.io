@@ -187,6 +187,7 @@ const deepLink = computed(() => (publicUrl.value.trim() ? miniTvLink(publicUrl.v
 // ---------- stile ----------
 const card = 'rounded-3xl border border-line bg-surface p-5'
 const btn = 'inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-line bg-surface px-3.5 text-[15px] font-semibold text-fg transition hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0'
+const showItalianPlaylists = __ITALIAN_PLAYLISTS__
 const iconBtn = 'inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border border-line bg-surface-2 text-fg transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40'
 const input = 'h-10 w-full rounded-xl border border-line bg-surface-2 px-3 text-[15px] text-fg placeholder:text-muted/70'
 const lbl = 'mb-1 block text-[13px] font-medium text-muted'
@@ -197,7 +198,7 @@ const warnCls = 'mt-1 text-[13px] text-amber-500'
 <template>
   <div :style="{ '--accent': app.color }" class="mx-auto max-w-4xl px-4 pb-8 pt-28 sm:px-6 sm:pt-32">
     <nav class="mb-6 flex flex-wrap gap-5 text-sm font-semibold">
-      <RouterLink to="/minitv/playlists" class="!text-muted no-underline hover:!text-accent">← Playlist di esempio</RouterLink>
+      <RouterLink v-if="showItalianPlaylists" to="/minitv/playlists" class="!text-muted no-underline hover:!text-accent">← Playlist di esempio</RouterLink>
       <RouterLink to="/minitv" class="!text-muted no-underline hover:!text-accent">MiniTV</RouterLink>
     </nav>
 
