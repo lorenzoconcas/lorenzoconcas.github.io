@@ -5,7 +5,11 @@ import curalinkIcon from '../assets/apps/curalink.png'
 import speseIcon from '../assets/apps/spese-immobili.png'
 
 import travelbuddyPrivacy from '../content/privacy/travelbuddy.html?raw'
-import minitvPrivacy from '../content/privacy/minitv.html?raw'
+import minitvPrivacyIt from '../content/privacy/minitv.it.html?raw'
+import minitvPrivacyEn from '../content/privacy/minitv.en.html?raw'
+import minitvPrivacyFr from '../content/privacy/minitv.fr.html?raw'
+import minitvPrivacyEs from '../content/privacy/minitv.es.html?raw'
+import minitvPrivacyPt from '../content/privacy/minitv.pt.html?raw'
 import racemapPrivacy from '../content/privacy/racemap.html?raw'
 import curalinkPrivacy from '../content/privacy/curalink.html?raw'
 import spesePrivacyIt from '../content/privacy/spese-immobili.it.html?raw'
@@ -71,8 +75,8 @@ export const apps: AppInfo[] = [
     lead: "Aggiungi le tue playlist M3U/M3U8 o JSON, organizza i canali a modo tuo e guarda in modo fluido con un'interfaccia pulita e veloce.",
     icon: minitvIcon,
     color: '#ef4d44',
-    platforms: ['iOS', 'macOS', 'Android'],
-    version: '2.0',
+    platforms: ['iOS', 'macOS', 'tvOS', 'Android'],
+    version: '2.0.1',
     features: [
       { title: 'Import facile', text: 'Supporto a URL remoti e file locali. Riconosce M3U/M3U8 e il formato JSON.' },
       { title: 'Riproduzione stabile', text: 'Player di sistema con VLC come alternativa automatica su iPhone, iPad e Mac; su Android ExoPlayer con HLS e DASH, Picture-in-Picture e Google Cast.' },
@@ -87,7 +91,13 @@ export const apps: AppInfo[] = [
       "Nota: l'app non include canali preinstallati. Usa solo sorgenti di cui possiedi i diritti di visione/redistribuzione.",
       "Android: l'app si installa dal file APK (non è sul Play Store). Dopo il download, consenti l'installazione da questa fonte quando Android lo chiede; poi apri il file. Per le trasmissioni su TV usa Google Cast.",
     ],
-    privacy: [{ lang: 'it', label: 'Italiano', heading: 'Privacy Policy', html: minitvPrivacy }],
+    privacy: [
+      { lang: 'it', label: 'Italiano', heading: 'Privacy Policy', html: minitvPrivacyIt },
+      { lang: 'en', label: 'English', heading: 'Privacy Policy', html: minitvPrivacyEn },
+      { lang: 'fr', label: 'Français', heading: 'Politique de confidentialité', html: minitvPrivacyFr },
+      { lang: 'es', label: 'Español', heading: 'Política de privacidad', html: minitvPrivacyEs },
+      { lang: 'pt', label: 'Português', heading: 'Política de privacidade', html: minitvPrivacyPt },
+    ],
     homeLinks: [
       { label: 'App Store', href: 'https://apps.apple.com/it/app/minitv/id6751760709', external: true },
       { label: 'APK Android', href: `${base}minitv/MiniTV.apk`, external: true },
