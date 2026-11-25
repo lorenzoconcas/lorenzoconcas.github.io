@@ -88,7 +88,7 @@ export const fr: Locale = {
       notes: ['Remarque : l’app est en test sur TestFlight et uniquement pour iOS. Pour les fonctions d’IA, un appareil avec Apple Intelligence (iOS 26 ou ultérieur) est recommandé.'],
     },
     minitv: {
-      title: 'MiniTV – Lecteur de radio et de vidéo en streaming pour iOS, macOS et Android',
+      title: 'MiniTV – Lecteur de radio et de vidéo en streaming pour iOS, macOS, tvOS et Android',
       summary: 'Un lecteur léger pour la radio et la vidéo en streaming. Ajoutez vos playlists et organisez les chaînes dans une grille claire et rapide.',
       lead: 'Ajoutez vos playlists M3U/M3U8 ou JSON, organisez les chaînes à votre façon et regardez en toute fluidité avec une interface claire et rapide.',
       features: [

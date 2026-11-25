@@ -70,7 +70,7 @@ export const apps: AppInfo[] = [
   {
     slug: 'minitv',
     name: 'MiniTV',
-    title: 'MiniTV – Player per radio e video in streaming per iOS, macOS e Android',
+    title: 'MiniTV – Player per radio e video in streaming per iOS, macOS, tvOS e Android',
     summary: "Player leggero per radio e video in streaming. Aggiungi le tue playlist e organizza i canali in una griglia pulita e veloce.",
     lead: "Aggiungi le tue playlist M3U/M3U8 o JSON, organizza i canali a modo tuo e guarda in modo fluido con un'interfaccia pulita e veloce.",
     icon: minitvIcon,

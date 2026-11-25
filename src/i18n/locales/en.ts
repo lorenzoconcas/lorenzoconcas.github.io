@@ -88,7 +88,7 @@ export const en: Locale = {
       notes: ['Note: the app is being tested on TestFlight and is iOS only. A device with Apple Intelligence (iOS 26 or later) is recommended for the AI features.'],
     },
     minitv: {
-      title: 'MiniTV – Radio and video streaming player for iOS, macOS and Android',
+      title: 'MiniTV – Radio and video streaming player for iOS, macOS, tvOS and Android',
       summary: 'A lightweight player for streaming radio and video. Add your playlists and organize channels in a clean, fast grid.',
       lead: 'Add your M3U/M3U8 or JSON playlists, organize channels your way and watch smoothly with a clean, fast interface.',
       features: [
