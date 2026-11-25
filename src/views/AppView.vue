@@ -56,12 +56,6 @@ const card = 'rounded-3xl border border-line bg-surface p-6'
   </header>
 
   <div class="flex flex-col gap-5">
-    <section v-if="slug === 'minitv'" :class="card" :style="{ background: `color-mix(in srgb, ${app.color} 12%, var(--surface))` }">
-      <h2 class="m-0 font-display text-2xl font-bold tracking-tight">{{ t('app.tvosTitle') }}</h2>
-      <p class="mb-0 mt-1.5 text-muted">{{ t('app.tvosText') }}</p>
-      <p class="mb-0 mt-3 text-[15px] text-muted">{{ t('app.tvosNote') }}</p>
-    </section>
-
     <section :class="card">
       <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3.5">
         <div v-for="f in app.features" :key="f.title" class="rounded-2xl border border-line bg-surface-2 px-4 py-3.5">
