@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "title": "Demo",
+  "epgUrl": "guida.xml",
+  "entries": [
+    {
+      "name": "Mondo Natura",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=1",
+      "group": "Documentari",
+      "epgId": "demo-01",
+      "backgroundHex": "#14301F",
+      "backgroundHex2": "#0B1A12",
+      "logoURL": "logos/mn.png"
+    },
+    {
+      "name": "Cinema Club",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=2",
+      "group": "Film",
+      "epgId": "demo-02",
+      "backgroundHex": "#3B2410",
+      "backgroundHex2": "#22150A",
+      "logoURL": "logos/cc.png"
+    },
+    {
+      "name": "Sport Arena",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=3",
+      "group": "Sport",
+      "epgId": "demo-03",
+      "backgroundHex": "#3A1614",
+      "backgroundHex2": "#220C0B",
+      "logoURL": "logos/sa.png"
+    },
+    {
+      "name": "Tele Giornale",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=4",
+      "group": "News",
+      "epgId": "demo-04",
+      "backgroundHex": "#221E4A",
+      "backgroundHex2": "#131030",
+      "logoURL": "logos/tg.png"
+    },
+    {
+      "name": "Cucina Live",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=5",
+      "group": "Lifestyle",
+      "epgId": "demo-05",
+      "backgroundHex": "#3A1830",
+      "backgroundHex2": "#220E1D",
+      "logoURL": "logos/cl.png"
+    },
+    {
+      "name": "Cartoon Fun",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=6",
+      "group": "Bambini",
+      "epgId": "demo-06",
+      "backgroundHex": "#3A2F10",
+      "backgroundHex2": "#221B09",
+      "logoURL": "logos/cf.png"
+    },
+    {
+      "name": "Cielo Mare",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=7",
+      "group": "Documentari",
+      "epgId": "demo-07",
+      "backgroundHex": "#10284A",
+      "backgroundHex2": "#0A1830",
+      "logoURL": "logos/cm.png"
+    },
+    {
+      "name": "Musica Live",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=8",
+      "group": "Musica",
+      "epgId": "demo-08",
+      "backgroundHex": "#7C3AED",
+      "backgroundHex2": "#C026D3"
+    },
+    {
+      "name": "Vita in Viaggio",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=9",
+      "group": "Documentari",
+      "epgId": "demo-09",
+      "backgroundHex": "#0F3338",
+      "backgroundHex2": "#091E21",
+      "logoURL": "logos/vi.png"
+    },
+    {
+      "name": "Teatro Aperto",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=10",
+      "group": "Cultura",
+      "epgId": "demo-10",
+      "backgroundHex": "#B45309",
+      "backgroundHex2": "#DC2626"
+    },
+    {
+      "name": "Meteo Oggi",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=11",
+      "group": "News",
+      "epgId": "demo-11",
+      "backgroundHex": "#0369A1",
+      "backgroundHex2": "#38BDF8"
+    },
+    {
+      "name": "Kids Yard",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=12",
+      "group": "Bambini",
+      "epgId": "demo-12",
+      "backgroundHex": "#27300F",
+      "backgroundHex2": "#171C09",
+      "logoURL": "logos/ky.png"
+    },
+    {
+      "name": "Pellicola d'Oro",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=13",
+      "group": "Film",
+      "epgId": "demo-13",
+      "backgroundHex": "#854D0E",
+      "backgroundHex2": "#CA8A04"
+    },
+    {
+      "name": "Notte Gialla",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=14",
+      "group": "Film",
+      "epgId": "demo-14",
+      "backgroundHex": "#1F2937",
+      "backgroundHex2": "#4B5563"
+    },
+    {
+      "name": "Pista Aperta",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=15",
+      "group": "Sport",
+      "epgId": "demo-15",
+      "backgroundHex": "#B91C1C",
+      "backgroundHex2": "#F97316"
+    },
+    {
+      "name": "Orbita",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=16",
+      "group": "Documentari",
+      "epgId": "demo-16",
+      "backgroundHex": "#1E1B4B",
+      "backgroundHex2": "#4338CA"
+    },
+    {
+      "name": "Storia Viva",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=17",
+      "group": "Cultura",
+      "epgId": "demo-17",
+      "backgroundHex": "#78350F",
+      "backgroundHex2": "#A16207"
+    },
+    {
+      "name": "Pollice Verde",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=18",
+      "group": "Lifestyle",
+      "epgId": "demo-18",
+      "backgroundHex": "#166534",
+      "backgroundHex2": "#65A30D"
+    },
+    {
+      "name": "Note Classiche",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=19",
+      "group": "Musica",
+      "epgId": "demo-19",
+      "backgroundHex": "#831843",
+      "backgroundHex2": "#BE185D"
+    },
+    {
+      "name": "Terre Lontane",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=20",
+      "group": "Documentari",
+      "epgId": "demo-20",
+      "backgroundHex": "#0F766E",
+      "backgroundHex2": "#14B8A6"
+    },
+    {
+      "name": "Radio Jazz",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=21",
+      "group": "Radio",
+      "epgId": "demo-21",
+      "backgroundHex": "#3A1614",
+      "backgroundHex2": "#220C0B",
+      "logoURL": "logos/rj.png"
+    },
+    {
+      "name": "Radio Notte",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8?canale=22",
+      "group": "Radio",
+      "epgId": "demo-22",
+      "backgroundHex": "#10284A",
+      "backgroundHex2": "#0A1830",
+      "logoURL": "logos/rn.png"
+    },
+    {
+      "name": "Radio Pop",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8?canale=23",
+      "group": "Radio",
+      "epgId": "demo-23",
+      "backgroundHex": "#3A1830",
+      "backgroundHex2": "#220E1D",
+      "logoURL": "logos/rp.png"
+    },
+    {
+      "name": "Radio Marea",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8?canale=24",
+      "group": "Radio",
+      "epgId": "demo-24",
+      "backgroundHex": "#155E75",
+      "backgroundHex2": "#06B6D4"
+    }
+  ]
+}
