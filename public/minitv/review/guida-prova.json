@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "title": "TV guide test",
+  "epgUrl": "guida-prova.xml",
+  "entries": [
+    {
+      "name": "Test One",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8",
+      "group": "Test",
+      "epgId": "test-one",
+      "backgroundHex": "#2563EB"
+    },
+    {
+      "name": "Test Two",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
+      "group": "Test",
+      "epgId": "test-two",
+      "backgroundHex": "#C2410C"
+    },
+    {
+      "name": "Test Three",
+      "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8",
+      "group": "Test",
+      "epgId": "test-three",
+      "backgroundHex": "#047857"
+    }
+  ]
+}
