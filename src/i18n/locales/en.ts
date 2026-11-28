@@ -73,16 +73,19 @@ export const en: Locale = {
   },
   apps: {
     travelbuddy: {
-      title: 'TravelBuddy – Trips, documents and memories, with on-device AI',
-      summary: 'Organize trips, documents and memories and mark the countries you\'ve visited on the map. With Apple Intelligence everything stays on your device. On TestFlight.',
-      lead: 'Plan your trips, collect tickets, documents and memories, and scratch off the countries you\'ve visited on the map. With Apple Intelligence, AI runs entirely on your device.',
+      title: 'TravelBuddy: Map and Documents',
+      summary: 'Trips, tickets, documents and memories in one app, even offline, with a map of the countries you’ve visited. On TestFlight.',
+      lead: 'Plan your trips, keep tickets and documents at hand and scratch off the countries you’ve visited on the map. No account, no ads.',
       features: [
-        { title: 'Trips with days and stops', text: 'Plan itineraries, places on the map, budget and checklists for every trip.' },
-        { title: 'Documents and memories', text: 'Tickets, PDFs, scans, photos and notes collected per trip, always at hand, even offline.' },
-        { title: 'Map of visited countries', text: 'A scratch-off world map with statistics on the countries you\'ve been to.' },
-        { title: 'On-device AI', text: 'Itinerary drafts, summaries and suggestions with Apple Intelligence, without sending your data to external servers.' },
+        { title: 'Trips with days and stops', text: 'Plan, places, expenses, checklists, calendar export and reminders for every trip.' },
+        { title: 'Tickets and documents', text: 'PDFs, photos, scans and Wallet passes: text is read on your device and you can search inside documents.' },
+        { title: 'On the road', text: 'What’s happening now and what’s next, weather, widgets and a departure countdown.' },
+        { title: 'Map of visited countries', text: 'A scratch-off world map, with memories, recap and statistics.' },
       ],
-      notes: ['Note: the app is being tested on TestFlight and is iOS only. A device with Apple Intelligence (iOS 26 or later) is recommended for the AI features.'],
+      notes: [
+        'The app is being tested on TestFlight, for iPhone and iPad with iOS 18 or later.',
+        'Free for up to 3 trips. TravelBuddy Pro is a one-time purchase, no subscription.',
+      ],
     },
     minitv: {
       title: 'MiniTV – Radio and video streaming player for iOS, macOS, tvOS and Android',

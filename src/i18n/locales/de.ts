@@ -73,16 +73,19 @@ export const de: Locale = {
   },
   apps: {
     travelbuddy: {
-      title: 'TravelBuddy – Reisen, Dokumente und Erinnerungen, mit KI auf dem Gerät',
-      summary: 'Organisiere Reisen, Dokumente und Erinnerungen und markiere besuchte Länder auf der Karte. Mit Apple Intelligence bleibt alles auf deinem Gerät. Auf TestFlight.',
-      lead: 'Plane deine Reisen, sammle Tickets, Dokumente und Erinnerungen und rubble auf der Karte die Länder frei, die du besucht hast. Mit Apple Intelligence läuft die KI vollständig auf dem Gerät.',
+      title: 'TravelBuddy: Karte und Dokumente',
+      summary: 'Reisen, Tickets, Dokumente und Erinnerungen in einer App, auch offline, mit der Karte der besuchten Länder. In TestFlight.',
+      lead: 'Plane deine Reisen, halte Tickets und Dokumente griffbereit und rubble auf der Karte die besuchten Länder frei. Ohne Konto, ohne Werbung.',
       features: [
-        { title: 'Reisen mit Tagen und Stationen', text: 'Plane Routen, Orte auf der Karte, Budget und Checklisten für jede Reise.' },
-        { title: 'Dokumente und Erinnerungen', text: 'Tickets, PDFs, Scans, Fotos und Notizen pro Reise gesammelt, immer griffbereit, auch offline.' },
-        { title: 'Karte der besuchten Länder', text: 'Eine Weltkarte zum Freirubbeln mit Statistiken zu den Ländern, in denen du warst.' },
-        { title: 'KI auf dem Gerät', text: 'Routenentwürfe, Zusammenfassungen und Vorschläge mit Apple Intelligence, ohne deine Daten an externe Server zu senden.' },
+        { title: 'Reisen mit Tagen und Stationen', text: 'Ablauf, Orte, Ausgaben, Checklisten, Kalender und Erinnerungen für jede Reise.' },
+        { title: 'Tickets und Dokumente', text: 'PDFs, Fotos, Scans und Wallet-Karten: Der Text wird auf dem Gerät gelesen und ist durchsuchbar.' },
+        { title: 'Unterwegs', text: 'Was gerade passiert und was als Nächstes kommt, Wetter, Widgets und Countdown zur Abfahrt.' },
+        { title: 'Karte der besuchten Länder', text: 'Eine Weltkarte zum Freirubbeln, mit Erinnerungen, Rückblick und Statistiken.' },
       ],
-      notes: ['Hinweis: Die App wird auf TestFlight getestet und ist nur für iOS. Für die KI-Funktionen wird ein Gerät mit Apple Intelligence (iOS 26 oder neuer) empfohlen.'],
+      notes: [
+        'Die App wird in TestFlight getestet, für iPhone und iPad ab iOS 18. Oberfläche auf Italienisch und Englisch.',
+        'Kostenlos bis zu 3 Reisen. TravelBuddy Pro ist ein Einmalkauf ohne Abo.',
+      ],
     },
     minitv: {
       title: 'MiniTV – Player für Radio und Video-Streaming für iOS, macOS, tvOS und Android',

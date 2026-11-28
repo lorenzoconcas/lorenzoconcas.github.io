@@ -73,16 +73,19 @@ export const pt: Locale = {
   },
   apps: {
     travelbuddy: {
-      title: 'TravelBuddy – Viagens, documentos e memórias, com IA no dispositivo',
-      summary: 'Organize viagens, documentos e memórias e marque no mapa os países visitados. Com a Apple Intelligence, tudo fica no seu dispositivo. No TestFlight.',
-      lead: 'Planeie as suas viagens, reúna bilhetes, documentos e memórias e raspe no mapa os países que visitou. Com a Apple Intelligence, a IA funciona inteiramente no dispositivo.',
+      title: 'TravelBuddy: mapa e documentos',
+      summary: 'Viagens, bilhetes, documentos e memórias num só app, também offline, com o mapa dos países visitados. No TestFlight.',
+      lead: 'Planeje suas viagens, tenha bilhetes e documentos à mão e raspe no mapa os países que visitou. Sem conta e sem anúncios.',
       features: [
-        { title: 'Viagens com dias e paragens', text: 'Planeie roteiros, locais no mapa, orçamento e listas de verificação para cada viagem.' },
-        { title: 'Documentos e memórias', text: 'Bilhetes, PDF, digitalizações, fotos e notas reunidos por viagem, sempre à mão, mesmo offline.' },
-        { title: 'Mapa dos países visitados', text: 'Um mapa-múndi de raspar com estatísticas dos países onde já esteve.' },
-        { title: 'IA no dispositivo', text: 'Rascunhos de roteiro, resumos e sugestões com a Apple Intelligence, sem enviar os seus dados para servidores externos.' },
+        { title: 'Viagens com dias e paradas', text: 'Roteiro, lugares, despesas, listas, calendário e lembretes para cada viagem.' },
+        { title: 'Bilhetes e documentos', text: 'PDFs, fotos, digitalizações e passes do Wallet: o texto é lido no aparelho e dá para pesquisar nos documentos.' },
+        { title: 'Durante a viagem', text: 'O que acontece agora e o que vem depois, clima, widgets e contagem regressiva da partida.' },
+        { title: 'Mapa dos países visitados', text: 'Um mapa-múndi para raspar, com memórias, retrospectiva e estatísticas.' },
       ],
-      notes: ['Nota: a app está em teste no TestFlight e apenas para iOS. Para as funções de IA recomenda-se um dispositivo com Apple Intelligence (iOS 26 ou posterior).'],
+      notes: [
+        'O app está em teste no TestFlight, para iPhone e iPad com iOS 18 ou posterior. Interface em italiano e inglês.',
+        'Grátis até 3 viagens. TravelBuddy Pro é uma compra única, sem assinatura.',
+      ],
     },
     minitv: {
       title: 'MiniTV – Leitor de rádio e vídeo em streaming para iOS, macOS, tvOS e Android',

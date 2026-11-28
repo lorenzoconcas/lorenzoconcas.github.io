@@ -4,7 +4,8 @@ import racemapIcon from '../assets/apps/racemap.png'
 import curalinkIcon from '../assets/apps/curalink.png'
 import speseIcon from '../assets/apps/spese-immobili.png'
 
-import travelbuddyPrivacy from '../content/privacy/travelbuddy.html?raw'
+import travelbuddyPrivacyIt from '../content/privacy/travelbuddy.it.html?raw'
+import travelbuddyPrivacyEn from '../content/privacy/travelbuddy.en.html?raw'
 import minitvPrivacyIt from '../content/privacy/minitv.it.html?raw'
 import minitvPrivacyEn from '../content/privacy/minitv.en.html?raw'
 import minitvPrivacyFr from '../content/privacy/minitv.fr.html?raw'
@@ -48,23 +49,27 @@ export const apps: AppInfo[] = [
   {
     slug: 'travelbuddy',
     name: 'TravelBuddy',
-    title: 'TravelBuddy – Viaggi, documenti e ricordi, con AI sul dispositivo',
-    summary: 'Organizza viaggi, documenti e ricordi e segna sulla mappa i paesi visitati. Con Apple Intelligence tutto resta sul dispositivo. In TestFlight.',
-    lead: 'Pianifica i tuoi viaggi, raccogli biglietti, documenti e ricordi e gratta sulla mappa i paesi che hai visitato. Con Apple Intelligence l’AI gira interamente sul dispositivo.',
+    title: 'TravelBuddy: Mappa e Documenti',
+    summary: 'Viaggi, biglietti, documenti e ricordi in un’unica app, anche offline, con la mappa dei paesi visitati. In TestFlight.',
+    lead: 'Pianifica i tuoi viaggi, tieni biglietti e documenti sempre a portata di mano e gratta sulla mappa i paesi che hai visitato. Senza account e senza pubblicità.',
     icon: travelbuddyIcon,
     color: '#1f5fbf',
     platforms: ['iOS', 'TestFlight'],
     features: [
-      { title: 'Viaggi con giorni e tappe', text: 'Pianifica itinerari, luoghi sulla mappa, budget e checklist per ogni viaggio.' },
-      { title: 'Documenti e ricordi', text: 'Biglietti, PDF, scansioni, foto e note raccolti per viaggio, sempre a portata di mano anche offline.' },
-      { title: 'Mappa dei paesi visitati', text: 'Una mappa del mondo da grattare con le statistiche dei paesi in cui sei stato.' },
-      { title: 'AI sul dispositivo', text: 'Bozze di itinerario, riassunti e consigli con Apple Intelligence, senza inviare i tuoi dati a server esterni.' },
+      { title: 'Viaggi con giorni e tappe', text: 'Programma, luoghi, spese, checklist, calendario e promemoria per ogni viaggio.' },
+      { title: 'Biglietti e documenti', text: 'PDF, foto, scansioni e pass di Wallet: il testo è letto sul dispositivo e si cerca dentro i documenti.' },
+      { title: 'Durante il viaggio', text: 'Cosa succede adesso e cosa viene dopo, meteo, widget e conto alla rovescia della partenza.' },
+      { title: 'Mappa dei paesi visitati', text: 'Una mappa del mondo da grattare, con ricordi, riepilogo e statistiche.' },
     ],
     stores: [{ kind: 'testflight', href: 'https://testflight.apple.com/join/Ayu98fGc' }],
     notes: [
-      'Nota: l’app è in fase di test su TestFlight e solo per iOS. Per le funzioni AI è consigliato un dispositivo con Apple Intelligence (iOS 26 o successivo).',
+      'L’app è in fase di test su TestFlight, per iPhone e iPad con iOS 18 o successivo.',
+      'Gratis fino a 3 viaggi. TravelBuddy Pro è un acquisto unico, senza abbonamento.',
     ],
-    privacy: [{ lang: 'it', label: 'Italiano', heading: 'Privacy Policy', html: travelbuddyPrivacy }],
+    privacy: [
+      { lang: 'it', label: 'Italiano', heading: 'Informativa sulla privacy', html: travelbuddyPrivacyIt },
+      { lang: 'en', label: 'English', heading: 'Privacy Policy', html: travelbuddyPrivacyEn },
+    ],
     homeLinks: [{ label: 'TestFlight', href: 'https://testflight.apple.com/join/Ayu98fGc', external: true }],
   },
   {
